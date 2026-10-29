@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Minimal, clear banner design for small businesses. Social media promotions and visual communication by Maysa Creative Studio.">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>Maysa Creative Studio — Minimal Banner Design</title>
+  <style>
+    :root{--bg:#f7f7f5;--paper:#fff;--ink:#171717;--muted:#606060;--line:#deded9;--accent:#315c4c;--soft:#e8eee9;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Helvetica,Arial,sans-serif;line-height:1.5}
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{padding:20px 0;border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .nav a{font-size:13px;text-decoration:none;color:var(--muted)}
+    .navlinks{display:flex;gap:24px;align-items:center}
+    .hero{padding:86px 0 76px;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+    .kicker{font-size:11px;text-transform:uppercase;letter-spacing:.17em;font-weight:700;color:var(--accent)}
+    h1{font-size:clamp(42px,7vw,82px);line-height:.98;letter-spacing:-.075em;margin:20px 0 22px;max-width:760px;font-weight:750}
+    .hero p{font-size:17px;color:var(--muted);max-width:520px;margin:0}
+    .hero-aside{border-left:2px solid var(--accent);padding:5px 0 5px 20px;color:var(--muted);font-size:13px}
+    .hero-aside strong{display:block;color:var(--ink);font-size:15px;margin-bottom:8px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border:1px solid var(--ink);text-decoration:none;font-size:13px;font-weight:700;min-height:44px}
+    .btn.primary{background:var(--ink);color:white}
+    .btn.secondary{background:transparent}
+    section{padding:60px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(26px,4vw,42px);letter-spacing:-.055em;line-height:1.05;margin:8px 0 0}
+    .section-head p{max-width:360px;color:var(--muted);font-size:13px;margin:0}
+    .portfolio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project{background:var(--paper);border:1px solid var(--line);padding:12px;min-width:0}
+    .banner{aspect-ratio:1.45/1;position:relative;overflow:hidden;padding:clamp(20px,4vw,40px);display:flex;flex-direction:column;justify-content:space-between}
+    .banner .mini{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:750}
+    .banner h3{font-size:clamp(25px,4vw,46px);line-height:.98;letter-spacing:-.065em;margin:20px 0 10px;max-width:420px}
+    .banner p{font-size:12px;line-height:1.5;max-width:260px;margin:0}
+    .banner .cta{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:750;border-bottom:1px solid currentColor;padding-bottom:4px;width:max-content;margin-top:20px}
+    .b-cafe{background:#e9e2d6;color:#25241f}
+    .b-cafe .mark{position:absolute;right:8%;bottom:10%;width:100px;height:100px;border:1px solid #9e9688;border-radius:50%}
+    .b-beauty{background:#eadcda;color:#402e2c}
+    .b-beauty .mini{color:#7e4d49}
+    .b-fashion{background:#202923;color:#f7f5ef}
+    .b-fashion .mini{color:#d2c5a4}
+    .b-fashion .cta{border-color:#d2c5a4}
+    .b-bakery{background:#f0e8ce;color:#3b3325}
+    .b-bakery .mini{color:#765f37}
+    .b-studio{background:#e1e9e5;color:#1f3e34}
+    .b-studio .mini{color:#315c4c}
+    .b-offer{background:#e4e3ef;color:#25243b}
+    .b-offer .mini{color:#595987}
+    .project-meta{display:flex;justify-content:space-between;gap:12px;padding:13px 2px 2px;font-size:12px}
+    .project-meta span:last-child{color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);background:var(--paper)}
+    .service{padding:24px;border-right:1px solid var(--line)}
+    .service:last-child{border-right:0}
+    .service .num{font-size:11px;color:var(--accent);font-weight:800;letter-spacing:.1em}
+    .service h3{font-size:18px;letter-spacing:-.03em;margin:22px 0 8px}
+    .service p{font-size:13px;color:var(--muted);margin:0}
+    .pricing{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .price{padding:23px;background:var(--paper);border:1px solid var(--line)}
+    .price.featured{border:2px solid var(--accent)}
+    .price h3{font-size:15px;margin:0 0 9px}
+    .amount{font-size:35px;letter-spacing:-.06em;font-weight:750;margin:8px 0}
+    .price p,.price li{font-size:12px;color:var(--muted)}
+    .price ul{padding-left:17px;min-height:60px}
+    .price .btn{width:100%;margin-top:10px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+    .about-grid h2{font-size:clamp(27px,4vw,42px);letter-spacing:-.06em;line-height:1.05;margin:10px 0}
+    .about-grid p{font-size:14px;color:var(--muted);max-width:520px}
+    .principles{display:grid;gap:12px}
+    .principle{border-top:1px solid var(--line);padding-top:12px;font-size:13px}
+    .principle strong{display:block;margin-bottom:3px}
+    .contact{background:#202923;color:#f7f5ef;padding:48px}
+    .contact .kicker{color:#c9d8cf}
+    .contact h2{font-size:clamp(32px,5vw,56px);letter-spacing:-.065em;line-height:1;margin:14px 0}
+    .contact p{color:#d1d5d1;max-width:540px;font-size:14px}
+    .contact .btn{border-color:#f7f5ef;color:#202923;background:#f7f5ef;margin-top:12px}
+    footer{padding:26px 0 38px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:20px}
+    .disclaimer{font-size:11px;color:var(--muted);margin-top:18px}
+    @media(max-width:720px){
+      .wrap{width:min(100% - 28px,var(--max))}
+      .navlinks{gap:12px}.navlinks a{font-size:11px}
+      .hero{grid-template-columns:1fr;padding:58px 0 50px;gap:28px}
+      .hero-aside{max-width:420px}
+      section{padding:44px 0}
+      .section-head{display:block}.section-head p{margin-top:12px}
+      .portfolio{grid-template-columns:1fr}
+      .banner{aspect-ratio:1.25/1}
+      .services,.pricing{grid-template-columns:1fr}
+      .service{border-right:0;border-bottom:1px solid var(--line)}
+      .service:last-child{border-bottom:0}
+      .price ul{min-height:0}
+      .about-grid{grid-template-columns:1fr;gap:24px}
+      .contact{padding:30px 22px}
+      footer{display:block}footer span{display:block;margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <div class="brand">Maysa Creative Studio</div>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap hero">
+    <div>
+      <div class="kicker">Minimal banner design · Brazil</div>
+      <h1>Clear design.<br>Good business.</h1>
+      <p>Minimal, typography-led banners for small businesses that want to communicate clearly and look professional online.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">View selected work</a>
+        <a class="btn secondary" href="#contact">Request a quote</a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <strong>Simple by design.</strong>
+      Clean layouts, considered spacing and readable type. Each concept is designed to make the message clear at a glance.
+    </aside>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">01 / Selected concepts</div><h2>Small banners.<br>Clear messages.</h2></div>
+        <p>Sample concepts for fictional businesses. These examples show the visual direction and are not commissioned client projects.</p>
+      </div>
+      <div class="portfolio">
+        <article class="project">
+          <div class="banner b-cafe">
+            <div class="mini">Coffee · Made fresh</div>
+            <div><h3>Your daily<br>coffee break.</h3><p>Good coffee. A quieter moment.</p><span class="cta">Visit us today ↗</span></div><div class="mark" aria-hidden="true"></div>
+          </div>
+          <div class="project-meta"><strong>01 — Café promotion</strong><span>Food & drink</span></div>
+        </article>
+        <article class="project">
+          <div class="banner b-beauty">
+            <div class="mini">Beauty studio · Appointments</div>
+            <div><h3>A moment<br>for yourself.</h3><p>Thoughtful care, tailored to you.</p><span class="cta">Book an appointment ↗</span></div>
+          </div>
+          <div class="project-meta"><strong>02 — Beauty studio</strong><span>Beauty</span></div>
+        </article>
+        <article class="project">
+          <div class="banner b-fashion">
+            <div class="mini">New collection / 2026</div>
+            <div><h3>Less, but<br>better.</h3><p>Everyday pieces. Considered style.</p><span class="cta">Explore the collection ↗</span></div>
+          </div>
+          <div class="project-meta"><strong>03 — Fashion boutique</strong><span>Retail</span></div>
+        </article>
+        <article class="project">
+          <div class="banner b-bakery">
+            <div class="mini">Bakery · Fresh daily</div>
+            <div><h3>Made fresh.<br>Shared slowly.</h3><p>Simple ingredients. Warm moments.</p><span class="cta">See today's menu ↗</span></div>
+          </div>
+          <div class="project-meta"><strong>04 — Bakery promotion</strong><span>Food & drink</span></div>
+        </article>
+        <article class="project">
+          <div class="banner b-studio">
+            <div class="mini">Independent studio</div>
+            <div><h3>Make your<br>message matter.</h3><p>Clear visual communication for small brands.</p><span class="cta">Let's talk ↗</span></div>
+          </div>
+          <div class="project-meta"><strong>05 — Creative service</strong><span>Services</span></div>
+        </article>
+        <article class="project">
+          <div class="banner b-offer">
+            <div class="mini">Seasonal edit · Limited offer</div>
+            <div><h3>Good things.<br>Good timing.</h3><p>A simple offer, made easy to understand.</p><span class="cta">Discover the offer ↗</span></div>
+          </div>
+          <div class="project-meta"><strong>06 — Seasonal promotion</strong><span>Campaign</span></div>
+        </article>
+      </div>
+      <p class="disclaimer">Portfolio note: all six banners are original concept designs created for demonstration. Business names, offers and services are illustrative.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">02 / What I do</div><h2>Design for everyday<br>business needs.</h2></div>
+        <p>Focused visual assets for small brands, local shops and independent services.</p>
+      </div>
+      <div class="services">
+        <div class="service"><div class="num">01</div><h3>Social media banners</h3><p>Promotional graphics for posts, offers and announcements.</p></div>
+        <div class="service"><div class="num">02</div><h3>Product & service promos</h3><p>Clear layouts that help customers understand what you offer.</p></div>
+        <div class="service"><div class="num">03</div><h3>Campaign sets</h3><p>A small group of coordinated graphics with a consistent look.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">03 / Starter pricing</div><h2>Simple packages.<br>No surprises.</h2></div>
+        <p>Introductory example prices. Final scope and delivery time are confirmed before work begins.</p>
+      </div>
+      <div class="pricing">
+        <article class="price"><h3>Single banner</h3><div class="amount">€8</div><p>One promotional design.</p><ul><li>One format</li><li>One revision</li><li>PNG or JPG delivery</li></ul><a class="btn secondary quote-link" href="#contact" data-package="Single banner — €8">Ask about this</a></article>
+        <article class="price featured"><h3>Starter set</h3><div class="amount">€20</div><p>For a small promotion.</p><ul><li>Three coordinated banners</li><li>One revision per design</li><li>PNG or JPG delivery</li></ul><a class="btn primary quote-link" href="#contact" data-package="Starter set — 3 banners — €20">Ask about this</a></article>
+        <article class="price"><h3>Business set</h3><div class="amount">€32</div><p>For a consistent campaign.</p><ul><li>Five coordinated banners</li><li>One revision per design</li><li>PNG or JPG delivery</li></ul><a class="btn secondary quote-link" href="#contact" data-package="Business set — 5 banners — €32">Ask about this</a></article>
+      </div>
+      <p class="disclaimer">Prices are illustrative starter rates, not a guaranteed market rate. Platform fees, taxes and payment conversion may apply. Do not accept a project until a safe, permitted payment method and delivery details are agreed.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div><div class="kicker">04 / Approach</div><h2>Less noise.<br>More clarity.</h2><p>I focus on restrained colour palettes, clear typography, balanced spacing and strong contrast so each design is easy to read, especially on mobile screens.</p></div>
+      <div class="principles">
+        <div class="principle"><strong>Typography first</strong>Simple sans-serif type and clear hierarchy.</div>
+        <div class="principle"><strong>Purposeful colour</strong>Neutral palettes with one considered accent.</div>
+        <div class="principle"><strong>Readable by design</strong>Strong contrast, short copy and mobile-friendly layouts.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="kicker">05 / Start a project</div>
+        <h2>Have a banner<br>in mind?</h2>
+        <p>Tell me about your business, the message you want to share and where the banner will be used. I can then confirm the scope, price and delivery details.</p>
+        <a class="btn" id="contactButton" href="mailto:YOUR-EMAIL@example.com?subject=Banner%20design%20enquiry">Request a quote by email</a>
+        <p class="disclaimer" style="color:#d1d5d1">Before publishing, replace the placeholder email with a professional contact address approved by your parent or guardian. Do not publish personal details.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">
+  <div>© <span id="year">2026</span> Maysa Creative Studio</div>
+  <span>Concept portfolio · Brazil</span>
+</footer>
+<script>
+  document.querySelectorAll('.quote-link').forEach(function(link){
+    link.addEventListener('click',function(){
+      var pkg=this.getAttribute('data-package')||'Banner design enquiry';
+      var btn=document.getElementById('contactButton');
+      btn.href='mailto:YOUR-EMAIL@example.com?subject='+encodeURIComponent(pkg);
+    });
+  });
+</script>
+</body>
+</html>
